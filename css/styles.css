@@ -27,9 +27,6 @@ h1 {
     align-items: left;
 
     position:absolute; /* Positions relative to the container */
-    /*top: 0;
-    /*left: center;*/
-    /*width: ; /* Fill container width */
     height: 350px; /* Fill container height */
  
 }
