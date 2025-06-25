@@ -10,16 +10,40 @@
     <body>
         <h1>Odin Recipes CSS</h1>
 
-        <div class="options">
-            <p class="opt-1">Lasagna</p>
-            <p class="opt-2">Coney Dogs</p>
-            <p class="opt-3">Stuffed Pork Chops</p>
+        <div class="bkdiv">
+            
         </div>
-        <ul>
-            <li><a href="recipes/lasagna.html">Lasagna</a></li>
-            <li><a href="recipes/coney-dogs.html">Coney Dogs</a></li>
-            <li><a href="recipes/stuffed-pork-chops.html">Stuffed Pork Chops</a></li>
-        </ul>
+        <div class="options">
+            <div id="idlasagna">
+                <p>Lasagna</p>
+                <img src="/images/lasagna.jpg" alt="New recipe image">
+            </div>
+            <div id="idconey">
+                <p>Coney Dogs</p>
+                <img src="/images/coney-dogs.jpg" alt="New recipe image">
+            </div>
+            <div id="idstuffed">
+                <p>Stuffed Pork Chops</p>
+                <img src="/images/stuffed-pork-chops.jpg" alt="New recipe image">
+            </div>
+        </div>
         
+        <script>
+            document.getElementById('idlasagna').addEventListener(
+                'click',
+                function() {
+                    window.location.href = '/recipes/lasagna.html';
+                })
+            document.getElementById('idconey').addEventListener(
+                'click',
+                function() {
+                    window.location.href = '/recipes/coney-dogs.html';
+                })
+            document.getElementById('idstuffed').addEventListener(
+                'click',
+                function() {
+                    window.location.href = '/recipes/stuffed-pork-chops.html';
+                })
+        </script>
     </body>
 </html>

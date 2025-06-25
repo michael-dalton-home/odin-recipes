@@ -3,11 +3,12 @@
     margin: 0 auto;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 24px;
-    
+    box-sizing: border-box;
 }
 
 body {
     max-width: 600px;
+    margin-top: 50px;
 }
 
 h1 {
@@ -16,36 +17,72 @@ h1 {
     padding: 20px;
 }
 
-.options {
-    padding:8px;
-    background-color: rgb(164, 163, 163);
+/* Box in background to options to add decoration
+*/
+.bkdiv {
+    z-index: 0;
+    background-color: rgba(0, 255, 255, 0.49);
+    height: 800px;
+    width: 150px;
+    align-items: left;
 
+    position:absolute; /* Positions relative to the container */
+    /*top: 0;
+    /*left: center;*/
+    /*width: ; /* Fill container width */
+    height: 350px; /* Fill container height */
+ 
 }
 
-.options p {
+/* Options div contains all my selections 
+*/
+.options {
+    padding-right: 0px;   
+    z-index: 2;
+}
+
+/* All my selections encapsulated within the options div 
+ */
+.options div {
+
     margin-bottom: 10px;
 
-    padding: 40px 8px;
-    height: 40px;
+    padding: 40px 0px;
+    height: 100px;
     font-weight: bolder;
     font-size:50px;
 
-    display: flex; 
+    display: flex;
     align-items: center;
     
+    /* Default state for selections is grey scale */
+    filter: grayscale(100%);
+    transition: filter 0.3s ease-in-out;
+
+    /* Clip the image to the bounding parent option */
+    overflow: hidden;
 }
 
-.opt-1 {
-    background-size: cover;
-    background-image: url('/images/lasagna.jpg');
+/* Individual option changes to color when mouse is hovering
+*/
+.options div:hover {
+    filter: grayscale(0%);
 }
 
-.opt-2 {
-    background-size: cover;
-    background-image: url('/images/coney-dogs.jpg');
+div img {
+    max-width: 400px;
+    padding-bottom: 10px;
+    border-bottom: 10px;
 }
 
-.opt-3 {
-    background-size: cover;
-    background-image: url('/images/stuffed-pork-chops.jpg');
+div p {
+    width: 200px;
+    height: 100px;
+    background-color: rgb(236, 236, 236);
+    margin: 0px ;
+    
+    /* Extend background of p to the image */
+    flex-grow: 1;
+
+    padding: 8px;
 }
