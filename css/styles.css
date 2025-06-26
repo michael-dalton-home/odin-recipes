@@ -1,6 +1,6 @@
 * {
     padding: 0px;
-    margin: 0 auto;
+    margin: 0px auto;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 24px;
     box-sizing: border-box;
@@ -34,30 +34,29 @@ h1 {
 /* Options div contains all my selections 
 */
 .options {
-    padding-right: 0px;   
+    /* Recipe options over the background decor */
     z-index: 2;
 }
 
 /* All my selections encapsulated within the options div 
+    This is the flex container
  */
 .options div {
-
+    /* Space out the recipe options */
     margin-bottom: 10px;
 
-    padding: 40px 0px;
+    /* Define the height of each recipe choice, and make the legend text bigger */
     height: 100px;
     font-weight: bolder;
     font-size:50px;
 
+    /* Left justify our legend and image within the div container */
     display: flex;
-    align-items: center;
+    justify-content: flex-start;
     
     /* Default state for selections is grey scale */
     filter: grayscale(100%);
     transition: filter 0.3s ease-in-out;
-
-    /* Clip the image to the bounding parent option */
-    overflow: hidden;
 }
 
 /* Individual option changes to color when mouse is hovering
@@ -67,19 +66,22 @@ h1 {
 }
 
 div img {
-    max-width: 400px;
+    /* Leave a little gap at the bottom for decor reasons */
     padding-bottom: 10px;
-    border-bottom: 10px;
+
+    /* Legend and Image are ratio 2:6 within the container */
+    flex: 6;
+
+    /* Display a center slab of the overall image */
+    object-fit: cover;
 }
 
 div p {
-    width: 200px;
-    height: 100px;
     background-color: rgb(236, 236, 236);
     margin: 0px ;
     
     /* Extend background of p to the image */
-    flex-grow: 1;
-
+    flex:2;
+    
     padding: 8px;
 }
